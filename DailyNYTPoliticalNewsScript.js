@@ -10,8 +10,9 @@ function nytAPI() {
   //var dateweekago = datetoday - 7
   
   // Adding yesterday's date to NYT API query text
-  var apiKey = "YOUR API KEY HERE"
-  var queryText = "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:%22Politics%22%20AND%20document_type:%22article%22&begin_date=" + dateyester + "&end_date=" + dateyester + "&api-key=" + apiKey
+  var apiKey = "YOUR API KEY HERE" // Add your NYT API key here
+  var newscategory = "Politics" // If you want a different category of use, change Politics to any category from https://developer.nytimes.com/docs/articlesearch-product/1/overview under News Desk Values
+  var queryText = "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:%22"+newscategory+"%22%20AND%20document_type:%22article%22&begin_date=" + dateyester + "&end_date=" + dateyester + "&api-key=" + apiKey
 
   // Passing query text to NYT API
   var response = UrlFetchApp.fetch(queryText);
